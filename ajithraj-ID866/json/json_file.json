@@ -1,0 +1,18 @@
+{ "widget": {
+    "schools": {
+        "title": "Mount Assisi School",
+        "name": "main_window",
+        "width": 500,
+        "height": 500
+    },
+    "state1": { 
+        "src": "Bhagalpur",
+        "name": "sun1",
+        "hOffset": 250,
+        "vOffset": 250,
+        "alignment": "center"
+    },
+    "schoolr": {
+        "data": "St. Joseph's School,"        
+    }
+}} 
