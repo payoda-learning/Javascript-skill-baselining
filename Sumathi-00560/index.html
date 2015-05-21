@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<head>
+<title>Javascript Skill Baselining </title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="mainWrapper">
+   <div class="container">
+      
+	   <div class="header">
+	       <ul>
+		       <li><a href="#accordiondiv">Accordion</a></li>
+			   <li><a href="#tabs">Tabs</a></li>
+		       <li><a href="#progressbar">Progress bar</a></li>
+			     <div class="clearfix"></div>
+		   </ul>
+	  </div>
+      <div id="accordiondiv">
+		         <h3>Accordion Content</h3>
+		             <div class="accordion" >
+							  <div class="accordion-group">
+								<div class="accordion-heading">
+								  <a href="#">
+									   Book Details
+								  </a>
+								</div>
+								<div id="collapseOne" class="accordion-body">
+								  <div class="accordion-inner">
+								  
+								  </div>
+								</div>
+							  </div>
+							  <div class="accordion-group">
+								<div class="accordion-heading">
+								  <a href="#">
+								  Book Publishers
+								  </a>
+								</div>
+								<div id="collapseTwo" class="accordion-body">
+								  <div class="accordion-inner">
+								  
+								  </div>
+								</div>
+							  </div>
+                     </div>
+		 </div><!--accordion-->	 
+		 <!-- tab content-->
+		 <div class="tabContent" id="tabs">
+		    <!-- Nav tabs -->
+			<h3>Tab Content</h3>
+				  <ul class="nav nav-tabs" id="myTab">
+					<li class="active"><a href="#bookreference" aria-controls="bookreference" role="tab" data-toggle="tab">Books</a></li>
+					<li><a href="#bookdes" aria-controls="bookdes" role="tab" data-toggle="tab">Description</a></li>
+					<li><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Book ID</a></li>
+
+				  </ul>
+						  <!-- Tab panes -->
+				  <div class="tab-content">
+					<div  class="tab-pane active" id="bookreference"></div>
+					<div  class="tab-pane contents" id="bookdes"></div>
+					<div class="tab-pane contents" id="messages"></div>
+				   
+				  </div> 
+		 </div><!--tab content-->
+		 <!-- progress bar -->
+		     <div id="progressbar">
+			     <h3>Progress Bar</h3>
+				   <div class="statusbar">
+				      <button>Click Here to view the status bar</button>
+							 <div class="progress" style="display:none;">
+			   
+							</div>
+               </div>
+			 </div>
+		 <!-- progress bar-->
+	
+	   
+
+   </div><!--container-->
+</div><!--mainWrapper-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="json/books.json"></script>
+
+<script type="text/javascript">
+$(document).ready( function() {	
+         var data = books.booksDetails;
+		 var details  = "";
+		 var publishername = "";
+		 var tabbookDetail = "";
+		 var bookDescription = "";
+		 var bookid = "";
+		 var progressbar = "";
+		var x = books.booksDetails.length;
+		
+		display(data);
+		  $('#collapseOne .accordion-inner').append(details);
+		  $('#collapseTwo .accordion-inner').append(publishername);
+		  $('#bookreference').append(tabbookDetail);
+		  $('#bookdes').append(bookDescription);
+		  $('#messages').append(bookid);
+		
+       
+  	   
+		/*	   $.ajax({ 
+    type: 'GET', 
+    url: 'ajax/books.json', 
+    data: { get_param: 'value' }, 
+    dataType: 'json',
+    success: function (data) { 
+        var names = data;
+           $.each(names, function(){
+			       details += '<p class="detailscontent"> <span>Book Name:</span> ' + this.name + '<span> Price:</span>' + this.price +   '</p>';
+			       publishername += '<p class="detailscontent"> <span>Book Author:</span>' + this.Author + '</p>';
+				   tabbookDetail  += '<p class="detailscontent"> <span>Book Name:</span> ' + this.name + '<br/> <span>  Price:</span>' + this.price +
+				   '<br/> <span> Author: </span>' + this.Author +'<br/> <span> Language: </span>'+ this.Language + '</p>';
+				   bookDescription += '<p class="detailscontent"> <span>Book Name:</span>'+ this.name +'<br/> <span>  Description:</span>' +this.Description + '</p>';
+				   bookid += '<p class="detailscontent"> <span>Book Name:</span>'+ this.name + '<br/><span>  Description:</span>'+ this.id +'</p>'
+				 
+			  });
+      
+			}
+		});*/
+		
+		 function display(data){
+		    $.each(data, function(){
+			       details += '<p class="detailscontent"> <span>Book Name:</span> ' + this.name + '<span> Price:</span>' + this.price +   '</p>';
+			       publishername += '<p class="detailscontent"> <span>Book Author:</span>' + this.Author + '</p>';
+				   tabbookDetail  += '<p class="detailscontent"> <span>Book Name:</span> ' + this.name + '<br/> <span>  Price:</span>' + this.price +
+				   '<br/> <span> Author: </span>' + this.Author +'<br/> <span> Language: </span>'+ this.Language + '</p>';
+				   bookDescription += '<p class="detailscontent"> <span>Book Name:</span>'+ this.name +'<br/> <span>  Description:</span>' +this.Description + '</p>';
+				   bookid += '<p class="detailscontent"> <span>Book Name:</span>'+ this.name + '<br/><span>  Description:</span>'+ this.id +'</p>'
+				 
+			  });
+		 }
+		
+		
+			 $('#myTab a').click(function (e) {
+				  e.preventDefault()
+				  $(this).tab('show');			
+			  });
+			 
+			  
+			
+			  $(".statusbar").click( function(){			  
+				 progressbar += '<div class="progress-bar" role="progressbar" aria-valuenow="' +x+'" aria-valuemin="0" aria-valuemax="100" style="width:20%">' +x+ '%</div>'; 
+                    $('.progress').append(progressbar);	                 				
+				 $('.progress').show();				 
+   			  });
+			  $('.accordion-body').hide();
+			  $(".accordion-group .accordion-heading").click(function(){
+			       $(this).parent().find('.accordion-body').slideToggle();
+				    $(this).parent().find('.accordion-body').toggleClass('acoordionopen');			  
+			  });
+			  $('.acoordionopen').animate({
+					background: '#333',
+					color: '#fff',
+					opacity: '0.5'
+				 
+				});
+			  
+		  });
+		 
+</script>
+</body>
+</html>

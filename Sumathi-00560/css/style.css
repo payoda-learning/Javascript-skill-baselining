@@ -1,0 +1,151 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+body{
+    margin:0px;
+	padding:0px;
+	font-size:14px;
+	color:#444;
+	font-family:arial;
+}
+/*header*/
+h3 {
+    font-size: 25px;
+    margin: 16px 20px;
+}
+.header ul {
+    background: #444 none repeat scroll 0 0;
+}
+.header ul li a{
+     color:#fff;
+}
+
+.header ul li {
+   border-right: 1px solid #ccc;
+    float: left;
+    list-style: outside none none;
+    padding:14px 28px;
+	color:#fff;
+}
+.accordion-heading  a:hover{
+     text-decoration:none;
+}
+.accordion-heading {
+    background: #ededed none repeat scroll 0 0;
+    color: #444;
+    font-size: 20px;
+}
+.accordion-heading a {
+    color: #444;
+    display: block;
+    padding: 4px 10px;
+}
+.detailscontent span {
+    font-weight: bold;
+    margin: 0 10px;
+}
+.tab-content .detailscontent span{
+     display: inline-block;
+    float: left;
+    font-weight: bold;
+    margin: 0 10px;
+    width: 99px;   
+}
+.tab-content {
+   padding: 10px;
+   background: #333 none repeat scroll 0 0;
+    border: 1px solid #ccc;
+    color: #fff;
+}
+.nav-tabs  li  a{
+   color:#444;
+   font-size:17px;
+   border:1px solid #ccc;
+}
+.nav-tabs  li  a:hover,.nav-tabs  li.active  a,.nav-tabs  li.active a:hover,.nav-tabs  li  a:focus{
+    background:#444;
+	color:#fff;	
+}
+.nav.nav-tabs{
+   margin:0px;
+}
+.detailscontent {
+    margin: 0 0 10px;
+}
+.progress{
+    height:17px;
+	color:#fff;
+	text-align:center;
+	 border: 1px solid #ccc;
+	 width:35%;
+}
+.statusbar button {
+    background: #444 none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    margin: 10px 0;
+    padding: 4px 19px;
+}
+.progress-bar{
+    background:blue;
+}
+.tab-pane.contents {
+    opacity: 0;
+}
+.tab-pane.contents.active {
+    opacity: 1;
+	-webkit-transition:opacity 0.3s linear 0s; 
+    transition: opacity 0.3s linear 0s;
+}
+/*media query*/
+@media (min-width:320px) and (max-width:768px){
+		.header ul li {
+		border-bottom: 1px solid #ccc;
+		color: #fff;
+		float: none;
+		list-style: outside none none;
+		padding: 14px 28px;
+	}
+			
+		#accordiondiv {
+			padding: 10px;
+		}
+		.detailscontent span {
+			display: block;
+			font-weight: bold;
+			margin: 0;
+       }
+	   .tabContent {
+    padding: 10px;
+   }
+   .tab-content .detailscontent span {
+    display: block;
+    float: none;
+    font-weight: bold;
+    margin: 0;
+    width: auto;
+   }
+   .statusbar {
+    margin: 0 10px;
+   }
+   .progress{
+      width:auto;
+   }
+}
