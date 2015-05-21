@@ -1,0 +1,57 @@
+body {
+	font-size: 14px;
+	color: #666;
+}
+.header {
+	background: #00ad71 none repeat scroll 0 0;
+    padding: 15px 0;
+}
+.header .nav a, .header .nav a:hover {
+    color: #fff !important;
+}
+#accordion, #tabs, #progress-bar{
+    margin: 20px 0;
+}
+#accordion h3 {
+    background: #e5e5e5 none repeat scroll 0 0;
+	border: 1px solid #ccc;
+	margin: 0;
+    color: #a5a5a5 !important;
+    display: block;
+    font-size: 22px;
+    padding: 5px 10px;
+	text-decoration: none !important;
+	outline: medium none !important;
+}
+.accordion-content {
+   border: 1px solid #ccc;
+   border-top: none;
+    padding: 10px;
+	background-color: #ADD8E6;
+}
+#accordion .ui-accordion-content-active.in {
+	height: auto !important;
+}
+#tabs .nav.nav-tabs {
+    margin: 0;
+}
+#tabs .tab-content {
+    border: 1px solid #ccc;
+}
+#tabs .tab-content .tab-pane {
+	padding: 10px;
+}
+#tabs .nav-tabs > li {
+    margin-bottom: -2px;
+}
+#tabs .nav-tabs > li a {
+	outline: medium none !important;
+}
+#progress-bar {
+    min-height: 10px;
+}
+.fade {
+    opacity: 0;
+	background-color: #e5e5e5;
+    transition: opacity 0.5s linear 0s !important;
+}
